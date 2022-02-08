@@ -7,7 +7,6 @@ $update = json_decode($input, TRUE);
 
 $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
-if(empty($message)){
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
@@ -21,11 +20,10 @@ switch($message) {
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
         break;
-}
-}
-echo 'Hola';
+
+    }
 function sendMessage($chatId, $response) {
-    $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
+    $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
 }
 
