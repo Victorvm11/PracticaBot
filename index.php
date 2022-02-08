@@ -7,8 +7,8 @@ $update = json_decode($input, TRUE);
 
 $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
-if(empty($message[0])){
-switch($message[0]) {
+if(empty($message)){
+switch($message) {
     case '/start':
         $response = 'Me has iniciado';
         sendMessage($chatId, $response);
