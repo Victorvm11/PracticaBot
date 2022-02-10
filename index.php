@@ -16,9 +16,12 @@ switch($message) {
         $response = 'Hola! Soy @Victorvm_bot';
         sendMessage($chatId, $response);
         break;
-        case 'Hola':
+    case 'Hola':
             $response = 'Hola! Soy el bot de Victor😉';
             sendMessage($chatId, $response);
+            break;
+    case '/hora':
+                $msg['text']  = 'La hora actual es ' . date('H:i:s');
             break;
 
     default:
