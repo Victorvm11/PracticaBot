@@ -1,4 +1,27 @@
 <?php
+include('TelegramBot/Api/BotApi.php');
+include('TelegramBot/Api/Exception.php');
+include('TelegramBot/Api/InvalidArgumentException.php');
+include('TelegramBot/Api/BaseType.php');
+include('TelegramBot/Api/TypeInterface.php');
+include('TelegramBot/Api/Types/ArrayOfArrayOfPhotoSize.php');
+include('TelegramBot/Api/Types/ArrayOfPhotoSize.php');
+include('TelegramBot/Api/Types/Audio.php');
+include('TelegramBot/Api/Types/Chat.php');
+include('TelegramBot/Api/Types/Contact.php');
+include('TelegramBot/Api/Types/Document.php');
+include('TelegramBot/Api/Types/ForceReply.php');
+include('TelegramBot/Api/Types/GroupChat.php');
+include('TelegramBot/Api/Types/Location.php');
+include('TelegramBot/Api/Types/Message.php');
+include('TelegramBot/Api/Types/PhotoSize.php');
+include('TelegramBot/Api/Types/ReplyKeyboardHide.php');
+include('TelegramBot/Api/Types/ReplyKeyboardMarkup.php');
+include('TelegramBot/Api/Types/Sticker.php');
+include('TelegramBot/Api/Types/User.php');
+include('TelegramBot/Api/Types/UserProfilePhotos.php');
+include('TelegramBot/Api/Types/Video.php');
+
 $token = '5208043466:AAFrmtgzTU5bdMkq3Br5zRyjcKp9z_VYo10';
 $website = 'https://api.telegram.org/bot'.$token;
 
@@ -21,7 +44,7 @@ switch($message) {
             sendMessage($chatId, $response);
             break;
     case '/hora':
-                $msg['text']  = 'La hora actual es ' . date('H:i:s');
+               $response = 'La hora actual es ' . date('H:i:s');
             break;
 
     default:
