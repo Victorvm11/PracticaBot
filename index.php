@@ -23,7 +23,21 @@ switch($message) {
             case '/ClasificacionATP':
                 getNoticias($chatId);
              break;
-            }
 
+    default:
+        $response = 'No te he entendido';
+        sendMessage($chatId, $response);
+        break;
 
+    }
+function sendMessage($chatId, $response) {
+    $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
+    file_get_contents($url);
+
+}
+ 
 ?>
+
+
+
+
