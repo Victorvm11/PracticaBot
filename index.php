@@ -48,14 +48,14 @@ function getNoticias($chatId){
     //include("simple_html_dom.php");
  
     $context = stream_context_create(array('https' =>  array('header' => 'Accept: application/xml')));
-    $url = "https://e00-marca.uecdn.es/rss/futbol/barcelona.xml";
+    $url = "https://www.sport.es/es/rss/tenis/rss.xml";
     $xmlstring = file_get_contents($url, false, $context);
  
     $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
     $json = json_encode($xml);
     $array = json_decode($json, TRUE);
     
-    $titulos = $titulos."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['6']['link']."'> +info</a>";
+    $titulos = $titulos."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['1']['link']."'> +info</a>";
     
  
     sendMessage($chatId, $titulos);
