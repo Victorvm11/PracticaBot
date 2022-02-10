@@ -17,7 +17,7 @@ switch($message) {
         sendMessage($chatId, $response);
         break;
         case 'Hola':
-            $response = 'Hola! Soy el bot de Victor';
+            $response = 'Hola! Soy el bot de Victor😉';
             sendMessage($chatId, $response);
             break;
             case '/ClasificacionATP':
