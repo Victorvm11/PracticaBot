@@ -20,10 +20,6 @@ switch($message) {
             $response = 'Hola! Soy el bot de Victor😉';
             sendMessage($chatId, $response);
             break;
-            case '/ClasificacionATP':
-                $response = "<a href='https://www.atptour.com/es/rankings/singles'></a>";
-                getNoticias($chatId);
-             break;
 
     default:
         $response = 'No te he entendido';
