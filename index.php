@@ -21,20 +21,9 @@ switch($message) {
             sendMessage($chatId, $response);
             break;
             case '/ClasificacionATP':
-                $response = "<a href='https://www.atptour.com/es/rankings/singles'></a>"
                 getNoticias($chatId);
              break;
-    
-    default:
-        $response = 'No te he entendido';
-        sendMessage($chatId, $response);
-        break;
+            }
 
-    }
 
- 
 ?>
-
-
-
-
