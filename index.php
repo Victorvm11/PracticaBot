@@ -16,6 +16,10 @@ switch($message) {
         $response = 'Hola! Soy @Victorvm_bot';
         sendMessage($chatId, $response);
         break;
+        case 'Hola':
+            $response = 'Hola! Soy el bot de Victor';
+            sendMessage($chatId, $response);
+            break;
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
