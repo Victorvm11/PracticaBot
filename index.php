@@ -24,8 +24,6 @@ switch($message) {
                 $response = "<a href='https://www.atptour.com/es/rankings/singles'></a>"
                 getNoticias($chatId);
              break;
-        case '/ClasificacionWTA':
-                sendMessage($chatId, "La clasificacion WTA es <a href='https://www.youtube.com/channel/UCGArCE3vmQkFpu_o_6axt1g'></a>");
     
     default:
         $response = 'No te he entendido';
@@ -33,27 +31,10 @@ switch($message) {
         break;
 
     }
-function sendMessage($chatId, $response) {
-    $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
-    file_get_contents($url);
-}
-function getNoticias($chatId){
- 
-    //include("simple_html_dom.php");
- 
-    $context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
-    $url = "https://www.marca.com/marcador/futbol/iphone/1/2018_19/fase0/jornada_8/marcador.xml/rss/rss.aspx";
- 
-    $xmlstring = file_get_contents($url, false, $context);
- 
-    $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
-    $json = json_encode($xml);
-    $array = json_decode($json, TRUE);
- 
-}
+
  
 ?>
 
 
 
-?>
+
