@@ -46,14 +46,6 @@ switch($message) {
     case '/hora':
                $response = 'La hora actual es ' . date('H:i:s');
             break;
-    case '/help':
-                $response'text']  = 'Los comandos disponibles son:' . PHP_EOL;
-                $response['text'] .= '/start Inicializa el bot';
-                $response['text'] .= '/fecha Muestra la fecha actual';
-                $response['text'] .= '/hora Muestra la hora actual';
-                $response['text'] .= '/help Muestra esta ayuda';
-                $response['reply_to_message_id'] = null;
-                break;
 
     default:
         $response = 'No te he entendido';
