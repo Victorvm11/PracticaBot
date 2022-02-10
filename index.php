@@ -1,26 +1,4 @@
 <?php
-include('TelegramBot/Api/BotApi.php');
-include('TelegramBot/Api/Exception.php');
-include('TelegramBot/Api/InvalidArgumentException.php');
-include('TelegramBot/Api/BaseType.php');
-include('TelegramBot/Api/TypeInterface.php');
-include('TelegramBot/Api/Types/ArrayOfArrayOfPhotoSize.php');
-include('TelegramBot/Api/Types/ArrayOfPhotoSize.php');
-include('TelegramBot/Api/Types/Audio.php');
-include('TelegramBot/Api/Types/Chat.php');
-include('TelegramBot/Api/Types/Contact.php');
-include('TelegramBot/Api/Types/Document.php');
-include('TelegramBot/Api/Types/ForceReply.php');
-include('TelegramBot/Api/Types/GroupChat.php');
-include('TelegramBot/Api/Types/Location.php');
-include('TelegramBot/Api/Types/Message.php');
-include('TelegramBot/Api/Types/PhotoSize.php');
-include('TelegramBot/Api/Types/ReplyKeyboardHide.php');
-include('TelegramBot/Api/Types/ReplyKeyboardMarkup.php');
-include('TelegramBot/Api/Types/Sticker.php');
-include('TelegramBot/Api/Types/User.php');
-include('TelegramBot/Api/Types/UserProfilePhotos.php');
-include('TelegramBot/Api/Types/Video.php');
 
 $token = '5208043466:AAFrmtgzTU5bdMkq3Br5zRyjcKp9z_VYo10';
 $website = 'https://api.telegram.org/bot'.$token;
@@ -64,31 +42,31 @@ function sendMessage($chatId, $response) {
     }
     
     function getNoticias($chatId){
-    
+ 
         //include("simple_html_dom.php");
-    
-        $context = stream_context_create(array('http' =>  array('header' => 'Accept: application/xml')));
+     
+        $context = stream_context_create(array('https' =>  array('header' => 'Accept: application/xml')));
         $url = "https://www.sport.es/es/rss/tenis/rss.xml";
-    
         $xmlstring = file_get_contents($url, false, $context);
-    
+     
         $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
         $json = json_encode($xml);
         $array = json_decode($json, TRUE);
-    
-            $titulos = $titulos."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['1']['link']."'> +info</a>";
         
-    
+        $titulos = $titulos."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['6']['link']."'> +info</a>";
+        
+     
         sendMessage($chatId, $titulos);
-    
-    
-    
+     
+     
+     
     }
-
-}
- 
-?>
-
+     
+     
+    ?>
+     
+     
+    
 
 
 
