@@ -54,6 +54,9 @@ switch($message) {
 function sendMessage($chatId, $response, $keyboard = NULL) {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
+    $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([['/go', '/status']], null, true);
+    $bot->sendMessage($message->getChat()->getId(), $answer, false, null, null, $keyboards);
+});
 
 }
  
