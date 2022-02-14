@@ -22,7 +22,6 @@ switch($message) {
             break;
 
         case '/ayuda2':
-            $response = "Tranquilo, estoy contigo.";
             $keyboard = '["Gracias"],["Pos Ok"]';
             sendMessage($chatId, $response,$keyboard);
             break;
