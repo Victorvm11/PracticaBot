@@ -20,28 +20,7 @@ switch($message) {
             $response = 'Hola! Soy el bot de Victor😉';
             sendMessage($chatId, $response);
             break;
-
-        case '/ayuda2':
-            if(isset($text) &&  $text =='❌ CANCELAR')
-{
-
-$keyboard= [
-	['Opción 1','Opción 2'],
-	['❌ CANCELAR']
-];
-
-	$key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
-	$k=json_encode($key);
-
-
-	$respuesta = "USTED HA CANCELADO";
-	sendMessage($chatId,$response,$token);
-
-
-	die();
-}
-            break;
-        case '/noticias':
+            case '/noticias':
             getNoticias($chatId);
             break;
             case '/fecha':
