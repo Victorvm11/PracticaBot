@@ -43,13 +43,21 @@ switch($message) {
                 sendMessage($chatId, $response);
 
                 break;
-            case '/tiempo':
-                if (strpos($response, "/weather") === 0) {
+            
+                if (strpos($message, "/weather") == 0) {
+
+
                     $location = substr($message, 9);
-                    $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&appid=mytoken"), TRUE)["weather"][0]["main"];
-                    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Here's the weather in ".$location.": ". $weather);
+                    
+                    
+                    $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&amp;appid=mytoken"), TRUE)["weather"][0]["main"];
+                    
+                    
+                    file_get_contents($path."/sendmessage?chat_id=".$chatId."&amp;text=Here's the weather in ".$location.": ". $weather);
+                    
+                    
                     }
-                    break;
+                    
         
 
     default:
