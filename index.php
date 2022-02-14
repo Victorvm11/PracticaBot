@@ -62,7 +62,7 @@ function getNoticias($chatId){
     //include("simple_html_dom.php");
  
     $context = stream_context_create(array('https' =>  array('header' => 'Accept: application/xml')));
-    $url = "https://www.sport.es/es/rss/tenis/rss.xml";
+    $url = "https://www.atptour.com/en/media/rss-feed/xml-feed";
     $xmlstring = file_get_contents($url, false, $context);
  
     $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
