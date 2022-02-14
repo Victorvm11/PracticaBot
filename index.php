@@ -22,9 +22,24 @@ switch($message) {
             break;
 
         case '/ayuda2':
-            $response = "Tranquilo, estoy contigo.";
-            $keyboard = '["Gracias"],["Pos Ok"]';
-            sendMessage($chatId, $response,$keyboard);
+            if(isset($text) &&  $text =='❌ CANCELAR')
+{
+
+$keyboard= [
+	['Opción 1','Opción 2'],
+	['❌ CANCELAR']
+];
+
+	$key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+
+	$respuesta = "USTED HA CANCELADO";
+	sendMessage($chatId,$response,$token);
+
+
+	die();
+}
             break;
         case '/noticias':
             getNoticias($chatId);
@@ -48,9 +63,14 @@ switch($message) {
 function sendMessage($chatId, $response, $keyboard = NULL) {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
-    if (isset($keyboard)) {
-        $teclado = '&reply_markup={"keyboard":['.$keyboard.'], "resize_keyboard":true, "one_time_keyboard":true}';
-    }
+    $keyboard= [
+        ['📌100','200','300'],
+        ['400','500'],
+        ['❌ CANCELAR'],
+    ];
+    
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+    $k=json_encode($key);
 }
  
 function getNoticias($chatId){
