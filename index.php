@@ -63,14 +63,7 @@ $keyboard= [
 function sendMessage($chatId, $response, $keyboard = NULL) {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
-    $keyboard= [
-        ['📌100','200','300'],
-        ['400','500'],
-        ['❌ CANCELAR'],
-    ];
-    
-    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
-    $k=json_encode($key);
+
 }
  
 function getNoticias($chatId){
