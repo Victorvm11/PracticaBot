@@ -43,20 +43,6 @@ switch($message) {
                 sendMessage($chatId, $response);
 
                 break;
-            
-                if (strpos($message, "/weather") == 0) {
-
-
-                $location = substr($message, 9);
-
-
-                $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&amp;appid=mytoken"), TRUE)["weather"][0]["main"];
-
-
-                file_get_contents($path."/sendmessage?chat_id=".$chatId."&amp;text=Here's the weather in ".$location.": ". $weather);
-
-
-}
                     
         
 
@@ -66,7 +52,20 @@ switch($message) {
         break;
  
     }
-function sendMessage($chatId, $response, $keyboard = NULL) {
+    $keyboard= [
+         ['100''200','300'], 
+         ['400''500','600'],
+         ['CANCELAR'],
+    ];
+    $key = array('one_time_keyboard' => true, 'resize_keyboard' => true, 'keyboard' => $keyboard);
+    $k=json_encode($key)
+    $response='Hola'
+
+    sendMessage($chatId, $response, $k);
+
+
+
+function sendMessage($chatId, $response,&$k = '') {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
     
