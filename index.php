@@ -34,11 +34,11 @@ switch($message) {
             break;
             case '/help':
                 $response  = 'Los comandos disponibles son:
-                /start Inicia el bot
-                /fecha Muestra la fecha actual
-                /hora Muestra la hora actual
-                /info Informacion del bot
-                /noticias Muestra la informacion del tenis del dia
+                /start Inicia el bot 🤖
+                /fecha Muestra la fecha actual 📆
+                /hora Muestra la hora actual ⌚
+                /info Informacion del bot 🤖
+                /noticias Muestra la informacion del tenis del dia 🎾
                 /help Muestra esta ayuda';
                 sendMessage($chatId, $response);
 
