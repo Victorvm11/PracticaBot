@@ -11,10 +11,10 @@ $name = $message["from"]["first_name"];
 $text = $message["text"];
 
 
-/*
+
 if(isset($text) &&  $text =='/start')
 {
-	$respuesta = "Hola ".$name." -- Bienvenido 😜 a mi Último BOT";
+	$respuesta = "Hola ".$name." -- Bienvenido 😜 a mi Último BOT!";
 	sendMessage($id,$respuesta,$token);
 }
 
