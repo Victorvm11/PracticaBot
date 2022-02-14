@@ -12,7 +12,7 @@ switch($message) {
         $response = 'Me has iniciado';
         sendMessage($chatId, $response);
         break;
-    case '/ayuda':
+    case '/info':
         $response = 'Hola! Soy @Victorvm_bot';
         sendMessage($chatId, $response);
         break;
