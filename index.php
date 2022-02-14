@@ -4,8 +4,15 @@ $website = 'https://api.telegram.org/bot'.$token;
  
 $input = file_get_contents('php://input');
 $update = json_decode($input, TRUE);
+
+$message = $update['message'];
+
+$id = $message["from"]["id"];
+$name = $message["from"]["first_name"];
+$text = $message["text"];
+
  
-$chatId = $update['message']['chat']['id'];
+/*$chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
 switch($message) {
     case '/start':
@@ -52,6 +59,7 @@ switch($message) {
         break;
  
     }
+    */
     $keyboard= [
          ['100''200','300'], 
          ['400''500','600'],
@@ -61,10 +69,30 @@ switch($message) {
     $k=json_encode($key)
     $response='Hola'
 
-    sendMessage($chatId, $response, $k);
+    sendMessage($id,$respuesta,$token,$k);
 
 
+    function sendMessage($chatID, $messaggio, $token,&$k = ''){
+        $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
+    
+        if(isset($k)) {
+            $url = $url."&reply_markup=".$k; 
+            }
+    
+        $url = $url."&text=" . urlencode($messaggio);
+        $ch = curl_init();
+        $optArray = array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true
+        );
+        curl_setopt_array($ch, $optArray);
+        $result = curl_exec($ch);
+        curl_close($ch);
+    }
+    ?>
 
+
+/*
 function sendMessage($chatId, $response,&$k = '') {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
@@ -92,6 +120,7 @@ function getNoticias($chatId){
  
  
 }
+*/
  
  
 ?>
