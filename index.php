@@ -46,7 +46,7 @@ switch($message) {
         
 
     default:
-        $response = 'No te he entendido!';
+        $response = 'No te he entendido';
         sendMessage($chatId, $response);
         break;
  
@@ -55,7 +55,6 @@ function sendMessage($chatId, $response, $keyboard = NULL) {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
     
-});
 
 }
  
