@@ -5,14 +5,16 @@ $website = 'https://api.telegram.org/bot'.$token;
 $input = file_get_contents('php://input');
 $update = json_decode($input, TRUE);
 
+/*
+
 $message = $update['message'];
 
 $id = $message["from"]["id"];
 $name = $message["from"]["first_name"];
 $text = $message["text"];
-
+*/
  
-/*$chatId = $update['message']['chat']['id'];
+$chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
 switch($message) {
     case '/start':
@@ -59,7 +61,8 @@ switch($message) {
         break;
  
     }
-    */
+    
+    /*
     $keyboard= [
          ['100''200','300'], 
          ['400''500','600'],
@@ -91,8 +94,8 @@ switch($message) {
     }
     
 
+*/
 
-/*
 function sendMessage($chatId, $response,&$k = '') {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
@@ -120,6 +123,6 @@ function getNoticias($chatId){
  
  
 }
-*/
+
 ?>
  
