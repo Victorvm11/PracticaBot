@@ -89,7 +89,7 @@ switch($message) {
         $result = curl_exec($ch);
         curl_close($ch);
     }
-    ?>
+    
 
 
 /*
@@ -121,6 +121,5 @@ function getNoticias($chatId){
  
 }
 */
- 
- 
 ?>
+ 
