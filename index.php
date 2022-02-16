@@ -16,6 +16,8 @@ $text = $message["text"];
  
 $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
+$repl=$update['message']['reply_to_message']['text'];
+
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
