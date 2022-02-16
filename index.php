@@ -99,14 +99,12 @@ switch($message) {
 function sendMessage($chatId, $response, $repl) {
     if($repl==TRUE){
         $reply_mark=array('force_reply'=>True);
-        $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_marcup='.json_encode($reply_mark).'&text='.urlencode($response);
+        $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($response);
     }
-
-    $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
+    else $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
-    
-
 }
+
  
 function getNoticias($chatId){
  
