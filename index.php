@@ -25,7 +25,7 @@ switch($message) {
         break;
     case '/info':
         $response = 'Hola! Soy @Victorvm_bot';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response, TRUE);
         break;
         case 'Hola':
             $response = 'Hola! Soy el bot de Victor😉';
