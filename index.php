@@ -99,10 +99,10 @@ switch($message) {
 */
 $keyboard = array('keyboard' => 
             array(array( 
-                array('text'=>'/noticias','callback_data'=>"1"), 
+                array('text'=>'/juegos','callback_data'=>"1"), 
             ), 
                 array( 
-                    array('text'=>'/fecha','callback_data'=>"4") 
+                    array('text'=>'/easter egg','callback_data'=>"4") 
                 )), 'one_time_keyboard' => false, 'resize_keyboard' => true 
         ); 
         file_get_contents('https://api.telegram.org/bot5208043466:AAFrmtgzTU5bdMkq3Br5zRyjcKp9z_VYo10/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($keyboard).'&text=Elija que desea hacer');
