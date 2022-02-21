@@ -152,7 +152,9 @@ function getNoticias($chatId, $noticia){
 
     }
  
-    sendMessage($chatId, $titulo1, $titulo2, $titulo3, FALSE);
+    sendMessage($chatId, $titulo1, FALSE);
+    sendMessage($chatId, $titulo2, FALSE);
+    sendMessage($chatId, $titulo3, FALSE);
  
  
  
