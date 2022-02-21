@@ -146,7 +146,7 @@ function getNoticias($chatId, $noticia){
     $json = json_encode($xml);
     $array = json_decode($json, TRUE);
     
-    for($i=0;$i<=3;$i++){
+    for($i=0;$i<=2;$i++){
     $titulos = $array['channel']['item'][$i]['title']."<a href='".$array['channel']['item'][$i]['link']."'> +info</a>";
     sendMessage($chatId, $titulos, FALSE);
     }
