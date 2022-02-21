@@ -22,9 +22,20 @@ switch($message) {
             $response = 'Hola! soy el bot de Victor😉';
             sendMessage($chatId, $response, TRUE);
             break;
-            case '/noticias':
-            getNoticias($chatId);
+            case 'Hola':
+                $response = '¿De que quieres la noticia?';
+                sendMessage($chatId, $response, TRUE);
+                break;
+        
+            case '/tenis':
+            getNoticias($chatId, 1);
             break;
+            case '/futbol':
+                getNoticias($chatId, 2);
+                break;
+            case '/baloncesto':
+                    getNoticias($chatId, 1);
+                break;
             case '/fecha':
                 $response  = 'La fecha actual es  ' . date('d/m/Y');
                 sendMessage($chatId, $response,FALSE);
@@ -81,12 +92,22 @@ function sendMessage($chatId, $response, $repl) {
 }
 
  
-function getNoticias($chatId){
+function getNoticias($chatId, $noticia){
  
     //include("simple_html_dom.php");
  
     $context = stream_context_create(array('https' =>  array('header' => 'Accept: application/xml')));
-    $url = "https://www.sport.es/es/rss/tenis/rss.xml";
+    switch ($noticia){
+        case '1':
+            $url = "https://www.sport.es/es/rss/tenis/rss.xml"
+            break;
+        case '2':
+                $url = "https://futbol.as.com/rss/futbol/primera.xml"
+                break;
+                case '3':
+                    $url = "https://as.com/rss/baloncesto/nba.xml"
+                    break;
+    }
     $xmlstring = file_get_contents($url, false, $context);
  
     $xml = simplexml_load_string($xmlstring, "SimpleXMLElement", LIBXML_NOCDATA);
