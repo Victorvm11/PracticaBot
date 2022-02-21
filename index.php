@@ -69,6 +69,7 @@ switch($message) {
                 /hora Muestra la hora actual ⌚
                 /info Informacion del bot 🤖
                 /noticias Muestra la informacion de los deportes del dia 🎾⚽🏀
+                /teclado Muestra un teclado con opciones que puedes realizar
                 /help Muestra esta ayuda';
                 sendMessage($chatId, $response,TRUE);
 
