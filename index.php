@@ -48,7 +48,7 @@ switch($message) {
                 case '/teclado':
                     $keyboard = array('keyboard' => 
             array(array( 
-                array('text'=>'/hora','callback_data'=>"1"), 
+                array('text'=>'/hora','callback_data'=>"5"), 
             ), 
                 array( 
                     array('text'=>'/fecha','callback_data'=>"4") 
