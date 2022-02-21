@@ -15,18 +15,18 @@ switch($message) {
         sendMessage($chatId, $response, TRUE);
         break;
     case '/info':
-        $response = 'Hola! Soy @Victorvm_bot';
+        $response = 'Hola soy @Victorvm_bot';
         sendMessage($chatId, $response, TRUE);
         break;
         case 'Hola':
-            $response = 'Hola! Soy el bot de Victor😉';
+            $response = 'Hola! soy el bot de Victor😉';
             sendMessage($chatId, $response, TRUE);
             break;
-            case '/noticias':
+            /*case '/noticias':
             getNoticias($chatId,TRUE);
-            break;
+            break;*/
             case '/fecha':
-                $response  = 'La fecha actual es ' . date('d/m/Y');
+                $response  = 'La fecha actual es  ' . date('d/m/Y');
                 sendMessage($chatId, $response,TRUE);
                 break;
        
