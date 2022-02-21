@@ -38,7 +38,21 @@ switch($message) {
                 break;
                 case 'balonmano':
                     getNoticias($chatId, 4);
-                break;
+                break; 
+                case 'ciclismo':
+                    $response = '¿De que tour quieres la noticia?';
+                    sendMessage($chatId, $response, TRUE);
+                    break;
+                case 'francia':
+                        getNoticias($chatId, 5);
+                    break; 
+                    case 'españa':
+                        getNoticias($chatId, 6);
+                    break; 
+                    case 'italia':
+                        getNoticias($chatId, 7);
+                    break; 
+
             case '/fecha':
                 $response  = 'La fecha actual es  ' . date('d/m/Y');
                 sendMessage($chatId, $response,FALSE);
@@ -113,6 +127,16 @@ function getNoticias($chatId, $noticia){
                     case '4':
                         $url = "https://as.com/rss/masdeporte/balonmano.xml";
                         break;
+                        case '5':
+                            $url = "https://as.com/rss/ciclismo/tour_francia.xml";
+                            break;
+                        case '6':
+                                $url = "https://as.com/rss/ciclismo/vuelta_espana.xml";
+                                break;
+                                case '7':
+                                    $url = "https://as.com/rss/ciclismo/giro_italia.xml";
+                                    break;
+                        
                     default:
                     break;
     }
