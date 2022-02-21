@@ -7,7 +7,7 @@ $update = json_decode($input, TRUE);
  
 $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
-//$repl=$update['message']['reply_to_message']['text'];
+$repl=$update['message']['reply_to_message']['text'];
 
 switch($message) {
     case '/start':
@@ -55,7 +55,7 @@ switch($message) {
  
     }
     
-/*$keyboard = array('keyboard' => 
+$keyboard = array('keyboard' => 
             array(array( 
                 array('text'=>'/noticias','callback_data'=>"1"), 
             ), 
@@ -64,7 +64,7 @@ switch($message) {
                 )), 'one_time_keyboard' => false, 'resize_keyboard' => true 
         ); 
         file_get_contents('https://api.telegram.org/bot5208043466:AAFrmtgzTU5bdMkq3Br5zRyjcKp9z_VYo10/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($keyboard).'&text=Elija que desea hacer');
-*/
+
 function sendMessage($chatId, $response, $repl) {
     if($repl==TRUE){
         $reply_mark=array('force_reply'=>True);
