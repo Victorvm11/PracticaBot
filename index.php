@@ -22,9 +22,9 @@ switch($message) {
             $response = 'Hola! soy el bot de Victor😉';
             sendMessage($chatId, $response, TRUE);
             break;
-            /*case '/noticias':
-            getNoticias($chatId,TRUE);
-            break;*/
+            case '/noticias':
+            getNoticias($chatId);
+            break;
             case '/fecha':
                 $response  = 'La fecha actual es  ' . date('d/m/Y');
                 sendMessage($chatId, $response,TRUE);
@@ -93,7 +93,7 @@ function getNoticias($chatId){
     $titulos = $titulos."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['1']['link']."'> +info</a>";
     
  
-    sendMessage($chatId, $titulos);
+    sendMessage($chatId, $titulos, FALSE);
  
  
  
