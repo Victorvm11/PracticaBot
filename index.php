@@ -146,9 +146,9 @@ function getNoticias($chatId, $noticia){
     $json = json_encode($xml);
     $array = json_decode($json, TRUE);
     
-    $titulo1 = $titulo1."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['1']['link']."'> +info</a>";
-    $titulo2 = $titulo2."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['2']['link']."'> +info</a>";
-    $titulo3 = $titulo3."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['3']['link']."'> +info</a>";
+    $titulo1 = $titulo1."\n\n".$array['channel']['title']."<a href='".$array['channel']['title']['1']['link']."'> +info</a>";
+    $titulo2 = $titulo2."\n\n".$array['channel']['title']."<a href='".$array['channel']['title']['2']['link']."'> +info</a>";
+    $titulo3 = $titulo3."\n\n".$array['channel']['title']."<a href='".$array['channel']['title']['3']['link']."'> +info</a>";
 
     
  
