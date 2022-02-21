@@ -34,7 +34,10 @@ switch($message) {
                 getNoticias($chatId, 2);
                 break;
             case 'baloncesto':
-                    getNoticias($chatId, 1);
+                    getNoticias($chatId, 3);
+                break;
+                case 'futbol sala':
+                    getNoticias($chatId, 4);
                 break;
             case '/fecha':
                 $response  = 'La fecha actual es  ' . date('d/m/Y');
@@ -51,7 +54,7 @@ switch($message) {
                 /fecha Muestra la fecha actual 📆
                 /hora Muestra la hora actual ⌚
                 /info Informacion del bot 🤖
-                /noticias Muestra la informacion del tenis del dia 🎾
+                /noticias Muestra la informacion de los deportes del dia 🎾⚽🏀
                 /help Muestra esta ayuda';
                 sendMessage($chatId, $response,TRUE);
 
@@ -107,6 +110,9 @@ function getNoticias($chatId, $noticia){
                 case '3':
                     $url = "https://as.com/rss/baloncesto/nba.xml";
                     break;
+                    case '4':
+                        $url = "https://as.com/tag/rss/futbol_sala/a/";
+                        break;
                     default:
                     break;
     }
