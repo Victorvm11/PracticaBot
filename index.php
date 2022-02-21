@@ -27,19 +27,19 @@ switch($message) {
                 sendMessage($chatId, $response, TRUE);
                 break;
         
-            case '/Tenis':
+            case '/tenis':
             getNoticias($chatId, 1);
             break;
-            case '/Futbol':
+            case '/futbol':
                 getNoticias($chatId, 2);
                 break;
-            case '/Baloncesto':
+            case '/baloncesto':
                     getNoticias($chatId, 3);
                 break;
-                case '/Balonmano':
+                case '/balonmano':
                     getNoticias($chatId, 4);
                 break; 
-                case '/Ciclismo':
+                case '/ciclismo':
                     $response = '¿De que tour quieres la noticia?';
                     sendMessage($chatId, $response, TRUE);
                     break;
