@@ -27,13 +27,13 @@ switch($message) {
                 sendMessage($chatId, $response, TRUE);
                 break;
         
-            case '/tenis':
+            case 'tenis':
             getNoticias($chatId, 1);
             break;
-            case '/futbol':
+            case 'futbol':
                 getNoticias($chatId, 2);
                 break;
-            case '/baloncesto':
+            case 'baloncesto':
                     getNoticias($chatId, 1);
                 break;
             case '/fecha':
