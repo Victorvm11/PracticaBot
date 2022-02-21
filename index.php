@@ -22,7 +22,7 @@ switch($message) {
             $response = 'Hola! soy el bot de Victor😉';
             sendMessage($chatId, $response, TRUE);
             break;
-            case 'Hola':
+            case '/noticias':
                 $response = '¿De que quieres la noticia?';
                 sendMessage($chatId, $response, TRUE);
                 break;
@@ -99,13 +99,15 @@ function getNoticias($chatId, $noticia){
     $context = stream_context_create(array('https' =>  array('header' => 'Accept: application/xml')));
     switch ($noticia){
         case '1':
-            $url = "https://www.sport.es/es/rss/tenis/rss.xml"
+            $url = "https://www.sport.es/es/rss/tenis/rss.xml";
             break;
         case '2':
-                $url = "https://futbol.as.com/rss/futbol/primera.xml"
+                $url = "https://futbol.as.com/rss/futbol/primera.xml";
                 break;
                 case '3':
-                    $url = "https://as.com/rss/baloncesto/nba.xml"
+                    $url = "https://as.com/rss/baloncesto/nba.xml";
+                    break;
+                    default:
                     break;
     }
     $xmlstring = file_get_contents($url, false, $context);
