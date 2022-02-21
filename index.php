@@ -150,7 +150,7 @@ function getNoticias($chatId, $noticia){
     $titulo2 = $titulo2."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['2']['link']."'> +info</a>";
     $titulo3 = $titulo3."\n\n".$array['channel']['title']."<a href='".$array['channel']['item']['3']['link']."'> +info</a>";
 
-    }
+    
  
     sendMessage($chatId, $titulo1, FALSE);
     sendMessage($chatId, $titulo2, FALSE);
